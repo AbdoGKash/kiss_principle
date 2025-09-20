@@ -12,6 +12,14 @@ KISS suggests that **simpler is better** whenever possible.
 Below are three examples showing how to apply KISS in real-life scenarios.
 
 
+## Benefits of KISS in Flutter/Dart
+
+Readability: Code that's easy to understand at a glance.
+Maintainability: Fewer errors and quicker updates.
+Efficiency: Less boilerplate means faster development.
+Scalability: Simple code grows without becoming a mess
+
+
 ## Example 1: JSON Handling In Flutter (Before vs After)
 
 ### ❌ Before: Manual JSON handling
@@ -36,6 +44,8 @@ class User {
   }
 }
 ```
+Defects Solved: Reduces boilerplate code, prevents runtime errors from typos or type mismatches, and automates serialization for nested objects—making it scalable for larger apps
+
 ### ✅ After: Using json_serializable
 
 ```dart
@@ -85,6 +95,7 @@ class UserStatusWidget extends StatelessWidget {
   }
 }
 ```
+Defects Solved: Eliminates nested logic that leads to bugs during maintenance and unclear intent from vague names like x—switching to enums makes states explicit and easy to add new cases
 
 ### ✅ After simplified with KISS: Using enum and switch for clarity.
 
@@ -125,6 +136,8 @@ class ClsB {}
 class DmHndl {}
 class PrcMgr {}
 ```
+
+Defects Solved: Vague names increase cognitive load and make code hard for teams to navigate—descriptive names reduce debugging time and improve collaboration.
 
 ### ✅ After: Meaningful Names Without Noise
 
