@@ -50,8 +50,72 @@ class User {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
-## Example 2:
 
+## Example 2: Simplifying Complex if-else Logic
+
+### Complex Code: Nested if-else with unclear variable names.
+
+```dart
+class UserStatusWidget extends StatelessWidget {
+
+  final int x;
+
+  UserStatusWidget(this.x);
+  @override
+  Widget build(BuildContext context) {
+    String msg = '';
+    if (x == 1) {
+      if (x > 0) {
+        msg = 'Welcome back!';
+      } else {
+        msg = 'Error';
+      }
+    } else if (x == 2) {
+      msg = 'Please log in';
+    } else if (x == 3) {
+      if (x < 4) {
+        msg = 'Account suspended';
+      } else {
+        msg = 'Unknown status';
+      }
+    } else {
+      msg = 'Invalid status';
+    }
+    return Text(msg);
+  }
+}
+```
+
+### ✅ After simplified with KISS: Using enum and switch for clarity.
+
+```dart
+enum UserStatus { loggedIn, guest, suspended }
+
+class UserStatusWidget extends StatelessWidget {
+  final UserStatus status;
+  const UserStatusWidget(this.status);
+  @override
+  Widget build(BuildContext context) {
+    String message;
+    switch (status) {
+      case UserStatus.loggedIn:
+        message = 'Welcome back!';
+        break;
+      case UserStatus.guest:
+        message = 'Please log in';
+        break;
+      case UserStatus.suspended:
+        message = 'Account suspended';
+        break;
+      default:
+        message = 'Invalid status';
+    }
+    return Text(message);
+  }
+}
+```
+
+## Example 3:
 
 ### ❌ Before: Complicated & Confusing Class Names
 
