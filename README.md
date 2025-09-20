@@ -9,8 +9,6 @@ In programming, this principle helps you write **cleaner, easier-to-maintain cod
 Overly complicated code is hard to read, debug, and maintain.  
 KISS suggests that **simpler is better** whenever possible.
 
-Below are three examples showing how to apply KISS in real-life scenarios.
-
 
 ## Benefits of KISS in Flutter/Dart
 
@@ -19,6 +17,7 @@ Maintainability: Fewer errors and quicker updates.
 Efficiency: Less boilerplate means faster development.
 Scalability: Simple code grows without becoming a mess
 
+Below are three examples showing how to apply KISS in real-life scenarios.
 
 ## Example 1: JSON Handling In Flutter (Before vs After)
 
